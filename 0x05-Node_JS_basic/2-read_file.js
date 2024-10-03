@@ -1,5 +1,6 @@
+const fs = require('fs');
+
 function countStudents(path) {
-  const fs = require('fs');
   let studentNumber = 0;
   const departments = {};
   fs.readFile(path, 'utf8', (err, data) => {
@@ -25,8 +26,8 @@ function countStudents(path) {
     console.log('Number of students: %d', studentNumber);
     if (departments) {
       for (const dep in departments) {
-        console.log('Number of students in %s: %d', dep, departments[dep].length);
-        console.log(departments[dep]);
+        const names = departments[dep].join(', ');
+        console.log('Number of students in %s: %d. List: %s', dep, departments[dep].length, names);
       }
     }
   });

@@ -15,7 +15,7 @@ describe('countStudents', () => {
   });
 
   it('logs to the console the right messages', () => {
-    countStudents('../database.csv');
+    countStudents('./database.csv');
 
     expect(consoleSpy.calledWith('Number of students: 10')).to.be.true;
     expect(consoleSpy.calledWith('Number of students in CS: 6. List: Johenn, Arielle, Jonathen, Emmenuel, Guillaume, Katie')).to.be.true;
